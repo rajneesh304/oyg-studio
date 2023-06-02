@@ -1,0 +1,52 @@
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  font-size: large;
+
+  font-weight: 600;
+
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+    }
+  }
+
+  .mid {
+    flex: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+
+    a {
+      display: flex;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .right {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font: inherit;
+      background: linear-gradient(45deg, red, orange);
+      border: none;
+    }
+  }
+}
