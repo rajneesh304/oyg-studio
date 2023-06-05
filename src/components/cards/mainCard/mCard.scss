@@ -1,0 +1,12 @@
+.mCard {
+  width: auto;
+  height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
+}
