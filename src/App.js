@@ -8,9 +8,11 @@ import Home from "./pages/home/Home"
 import Login from './pages/auth/login/Login';
 import Signup from './pages/auth/register/Signup';
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from './firebase';
 import { useEffect } from 'react';
 import Logout from './pages/auth/logout/Logout';
+
+import { auth } from '../src/firebase';
+
 function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -31,7 +33,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <><Navbar /><Home /></>,
     },
     {
       path: "/login",
@@ -50,7 +52,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
       <RouterProvider router={router} />
     </div>
   );

@@ -3,7 +3,7 @@ import "./login.scss"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../../firebase';
 import { NavLink, useNavigate } from 'react-router-dom'
-
+import loginImage from "../../../assets/images/login.jpg"
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -27,36 +27,44 @@ const Login = () => {
 
   return (
     <div className='login'>
-      <form>
-        <input
-          id="email-address"
-          name="email"
-          type="email"
-          required
-          placeholder="Email address"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          id="password"
-          name="password"
-          type="password"
-          required
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <div className="containerWithImage">
+        <img src={loginImage} alt="" />
+        <div className='container'>
 
-        <button
-          onClick={onLogin}
-        >
-          Login
-        </button>
-      </form>
-      <p className="text-sm text-white text-center">
-        No account yet? {' '}
-        <NavLink to="/register">
-          Sign up
-        </NavLink>
-      </p>
+          <form>
+            <input
+              className='email'
+              id="email-address"
+              name="email"
+              type="email"
+              required
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              className='password'
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <button
+              onClick={onLogin}
+            >
+              Login
+            </button>
+          </form>
+          <p className="text-sm text-white text-center">
+            No account yet? {' '}
+            <NavLink to="/register">
+              Sign up
+            </NavLink>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

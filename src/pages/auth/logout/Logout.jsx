@@ -2,6 +2,7 @@ import React from 'react';
 import { signOut } from "firebase/auth";
 import { auth } from '../../../firebase';
 import { useNavigate } from 'react-router-dom';
+import "./logout.scss"
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -17,19 +18,11 @@ const Logout = () => {
   }
 
   return (
-    <>
-      <nav>
-        <p>
-          Welcome Home
-        </p>
-
-        <div>
-          <button onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      </nav>
-    </>
+    <div className='logout'>
+      <button onClick={handleLogout}>
+        Logout
+      </button>
+    </div>
   )
 }
 

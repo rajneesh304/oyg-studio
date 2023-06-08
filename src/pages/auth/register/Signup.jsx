@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import "./signup.scss"
 import { NavLink, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../firebase';
+import loginImage from "../../../assets/images/login.jpg"
+
 
 const Signup = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -26,64 +30,73 @@ const Signup = () => {
         console.log(errorCode, errorMessage);
         // ..
       });
+  }
 
-
+  const handleConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+    const passwordMismatch = document.getElementById("passwordMismatch");
+    if (password !== e.target.value) {
+      passwordMismatch.style.display = 'block';
+    }
+    else {
+      passwordMismatch.style.display = 'none';
+    }
   }
 
   return (
-    <main >
-      <section>
-        <div>
-          <div>
-            <h1> FocusApp </h1>
-            <form>
-              <div>
-                <label htmlFor="email-address">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  label="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="Email address"
-                />
-              </div>
 
-              <div>
-                <label htmlFor="password">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  label="Create password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="Password"
-                />
-              </div>
+    <div className='signUp'>
+      <div className="containerWithImage">
+        <img src={loginImage} alt="" />
+        <div className="container">
+          <form>
+            <input
+              className='email'
+              type="email"
+              label="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Email address"
+            />
+            <input
+              className='password'
+              type="password"
+              label="Create password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Password"
+            />
+            <input
+              className='password'
+              type="password"
+              label="Confirm password"
+              value={confirmPassword}
+              onChange={handleConfirmPassword}
+              required
+              placeholder="Confirm Password"
+            />
+            <label id='passwordMismatch'>Password and confirm password do not match!</label>
+            <button
+              type="submit"
+              onClick={onSubmit}
+            >
+              Sign up
+            </button>
 
-              <button
-                type="submit"
-                onClick={onSubmit}
-              >
-                Sign up
-              </button>
+          </form>
 
-            </form>
-
-            <p>
-              Already have an account?{' '}
-              <NavLink to="/login" >
-                Sign in
-              </NavLink>
-            </p>
-          </div>
+          <p>
+            Already have an account?{' '}
+            <NavLink to="/login" >
+              Sign in
+            </NavLink>
+          </p>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+
   )
 }
 
