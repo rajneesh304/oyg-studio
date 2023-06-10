@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import Logout from './pages/auth/logout/Logout';
 
 import { auth } from '../src/firebase';
+import Contact from './pages/contact/Contact';
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,11 @@ function App() {
       path: "/register",
       element: <Signup />,
     },
+    {
+      path: "/contactUs",
+      element: <><Navbar /><Contact /></>,
+    },
+
   ]);
 
 
