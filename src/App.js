@@ -25,7 +25,7 @@ function App() {
       } else {
         // User is signed out
         // ...
-        console.log("user is logged out")
+        // console.log("user is logged out")
       }
     });
 
