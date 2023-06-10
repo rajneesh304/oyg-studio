@@ -15,7 +15,6 @@ const Contact = () => {
   // Add a new document in collection "test"
   const sendData = async (e) => {
     e.preventDefault();
-    console.log(email)
     await setDoc(doc(db, "queries", uuidv4()), {
       email: email,
       brief: brief,

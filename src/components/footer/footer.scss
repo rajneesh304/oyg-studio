@@ -50,6 +50,7 @@
     a {
       text-decoration: none;
       color: white;
+      cursor: pointer;
     }
   }
 
@@ -62,6 +63,8 @@
 
     .socials {
       color: white;
+      display: flex;
+      gap: 10px;
 
       a {
         color: inherit;
@@ -79,6 +82,7 @@
         text-align: center;
         width: 100%;
         color: white;
+        font-size: x-small;
       }
     }
   }
