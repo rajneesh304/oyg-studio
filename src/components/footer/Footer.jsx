@@ -1,9 +1,18 @@
 import React from 'react'
 import "./footer.scss"
+import { useNavigate } from "react-router-dom";
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 const Footer = () => {
+  const navigate = useNavigate();
+  const gotoContact = () => {
+    navigate('/contactUs')
+  }
+
+
+
   return (
     <div className='footer'>
       <div className="button">
@@ -23,6 +32,7 @@ const Footer = () => {
         <a href="http://">ABOUT</a>
         <a href="http://">MORE</a>
         <a href="http://">BLOG</a>
+        <a onClick={gotoContact}>CONTACT</a>
       </div>
       <div className='bottom'>
         <div className="socials">
