@@ -10,6 +10,9 @@ const Footer = () => {
   const gotoContact = () => {
     navigate('/contactUs')
   }
+  const gotoWork = () => {
+    navigate('/work')
+  }
 
 
 
@@ -26,7 +29,7 @@ const Footer = () => {
       <div className="detail">At OYG Studio, we take care of that. </div>
       <div className="banner">
         <a href="http://">HOME</a>
-        <a href="http://">WORK</a>
+        <a onClick={gotoWork}>WORK</a>
         <a href="http://">AI</a>
         <a href="http://">SERVICES</a>
         <a href="http://">ABOUT</a>
