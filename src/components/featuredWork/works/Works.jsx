@@ -48,7 +48,7 @@ const Works = () => {
 
   window.addEventListener('load', async () => {
     await fetchWorks();
-    console.log(works);
+    // console.log(works);
   });
 
   const group = divideIntoGroups(works, 2);

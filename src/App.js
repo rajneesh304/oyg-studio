@@ -13,6 +13,7 @@ import Logout from './pages/auth/logout/Logout';
 
 import { auth } from '../src/firebase';
 import Contact from './pages/contact/Contact';
+import Work from './pages/work/Work';
 
 function App() {
   useEffect(() => {
@@ -52,7 +53,10 @@ function App() {
       path: "/contactUs",
       element: <><Navbar /><Contact /></>,
     },
-
+    {
+      path: "/work",
+      element: <><Navbar /><Work /></>,
+    },
   ]);
 
 
