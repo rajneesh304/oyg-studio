@@ -1,3 +1,5 @@
+@import "../../../style.scss";
+
 .card {
   width: auto;
   display: flex;
@@ -10,19 +12,29 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
+  @include mobile {
+    flex-direction: column;
+    height: 70vh;
+
+  }
+
   .image {
     flex: 3;
     height: 100%;
+    overflow: hidden;
+
+    @include mobile {
+      flex: 4;
+    }
 
     img {
-      height: 100%;
       width: 100%;
       object-fit: cover;
     }
   }
 
   .text {
-    flex: 4;
+    flex: 3;
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -30,6 +42,7 @@
     flex-direction: column;
     gap: 50px;
     margin: 20px;
+    overflow: visible;
 
     .title {
       display: flex;
