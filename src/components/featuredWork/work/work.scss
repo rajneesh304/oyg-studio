@@ -1,5 +1,6 @@
+@import "../../../style.scss";
+
 .work {
-  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,6 +8,7 @@
   flex: 1;
   color: white;
   background-size: cover;
+  min-height: 500px;
 
   .title {
     overflow-wrap: break-word;

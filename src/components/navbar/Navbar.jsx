@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className='left'>
         <img src={oyg} alt="" />
       </div>
-      {/* <div className='mid'>
+      <div className='mid'>
         <a onClick={gotoHome}>HOME</a>
         <a onClick={gotoWork}>WORK</a>
         <a href="http://">AI</a>
@@ -26,7 +26,7 @@ const Navbar = () => {
         <a href="http://">ABOUT</a>
         <a href="http://">MORE</a>
         <a href="http://">BLOG</a>
-      </div> */}
+      </div>
       <div className='right'>
         <button onClick={gotoContact}>START A PROJECT</button>
       </div>
